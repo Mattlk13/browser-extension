@@ -22,7 +22,9 @@
     "chrome-open": "yarn build && yarn chrome-launch --",
     "chrome-launch": "node scripts/chrome-launch.js",
     "firefox-open": "yarn build && yarn firefox-launch --",
-    "firefox-launch": "web-ext run --source-dir dist --pref startup.homepage_welcome_url=https://github.com/OctoLinker/OctoLinker/blob/master/package.json"
+    "firefox-launch": "web-ext run --source-dir dist --pref startup.homepage_welcome_url=https://github.com/OctoLinker/OctoLinker/blob/master/package.json",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
@@ -70,6 +72,8 @@
   },
   "private": true,
   "dependencies": {
-    "@babel/plugin-transform-runtime": "^7.4.4"
-  }
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "snyk": "^1.190.0"
+  },
+  "snyk": true
 }
